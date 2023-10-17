@@ -11,23 +11,20 @@ public class MaximumConsecutiveOne {
         System.out.println(findMaxConsecutiveOnes(arr));
     }
 
-    public static int findMaxConsecutiveOnes(int[] arr) {
-        int n = arr.length;
-        int count = 0;
-        int maxCount = 0;  // Added variable to keep track of maximum consecutive ones
-
-        for (int i = 0; i < n; i++) {
-            if (arr[i] == 1) {
-                count = count + 1;
-             // Update maxCount if necessary
-             i++;
-              
-            } else {
-                count = 0;
-                
-
-            }
-        }
-        return count;  // Return the maximum consecutive ones found
+    public static int findMaxConsecutiveOnes(int[] nums) {
+        int n = nums.length;
+         int count = 0;
+        int max=0;
+     for(int i = 0 ;i<nums.length;i++){
+         if(nums[i] == 1){
+             count++;
+            max = Math.max(max,count);
+         }
+         else{
+             count  = 0;
+         }
+       
+     }
+    return max;
     }
 }
