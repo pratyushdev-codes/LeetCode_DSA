@@ -12,18 +12,28 @@ public class Test {
         customMethod(arr, s, e);
     }
 
-    public static void customMethod(int arr[], int s, int e){
-        int n = arr.length;
-
-        for(int x = s; x < n; x++){
-            for(int y=s;y<e;y++){
-
-                for(int i=x;i<y;i++){
-                    System.out.print(arr[i] + " ");
-                    System.out.println();
-                }
+    public static int customMethod(int arr[]){
+        int n=arr.length;
+        int i=0;
+        while(i<n){
+        if(arr[i]<1|| arr[i]>n||i==arr[i]-1){
+            i++;
+        }else{
+            int idx=arr[i]-1;
+            if(arr[i]==idx){
+                i++;
+            }else{
+                int temp =i;
+                i=idx;
+                idx=temp;
             }
         }
+        }for(int j=0;j<n;j++){
+            if(j!=arr[j]-1){
+                return j+1;
+            }
+        }
+       return n+1;
     }
 }
            
