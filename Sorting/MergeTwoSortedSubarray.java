@@ -7,32 +7,50 @@ public class MergeTwoSortedSubarray{
             System.out.println("Enter first Array:");
     
             int n = sc.nextInt();
-            int a[] = new int[n];
+            int arr[] = new int[n];
             for (int i = 0; i < n; i++) {
-                a[i] = sc.nextInt();
+                arr[i] = sc.nextInt();
             }
     
-            =
+            int s=sc.nextInt();
+            int m =sc.nextInt();
+            int e=sc.nextInt();
+            
     
-            int[] result = MergeTwoSortedArray(a,b);
-            // Print the merged array
-            for (int i : result) {
-                System.out.print(i + " ");
+           
+        
+        }public static int [] mergesortedSubarrays(int arr [], int s, int m , int e){
+            int temp []= new int[e-s+1];
+          int P1=s;
+          int P2=m+1;
+          int P3=e;                                 
+
+          while(P1<m && P2<e){
+
+        if(arr[P1]<arr[P2]){
+temp[P3]=arr[P1];
+P3++;
+P1++;
+        }else{
+            temp[P3]=arr[P2];
+            P3++;
+            P2++;
+        }
+          }
+
+          while(P1<m){
+            temp[P3]=arr[P1];
+            P3++;
+P1++;
+          }
+            while(P2<e){
+                temp[P3]=arr[P2];
+                P3++;
+                P2++;
             }
-        }public static int mergesortedSubarrays(int a [] , int b []){
-            int n=a.length;
-            int m=b.length;
-
-            int [] c= new int[n+m];
-            int p1=0;
-            int p2=0;
-        while(p1<n && p2<m){
-            if(a[p1]<b[p2]){
-                c[p3]
-
         }
 
-
+return temp;
         }
 
-    }
+    
