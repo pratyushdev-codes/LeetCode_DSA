@@ -1,24 +1,27 @@
 public class ContainerwithMostWater{
     public static void main(String[] args) {
+        //BoilerPlate code
+
+
+
+        int result = conatianerwithmostWater(arr[]);
+    }public static int conatianerwithmostWater(int arr []){
+        int i=0;
+        int j=0;
+        int ans= Integer.MIN_VALUE;
+
+        int width= (j-1)*Math.min(i,j);
         
-    }class Solution {
-        public int maxArea(int[] height) {
-            int left = 0;
-            int right = height.length - 1;
-            int maxArea = 0;
-    
-            while (left < right) {
-                int currentArea = Math.min(height[left], height[right]) * (right - left);
-                maxArea = Math.max(maxArea, currentArea);
-    
-                if (height[left] < height[right]) {
-                    left++;
-                } else {
-                    right--;
-                }
+        while(i<j){
+
+            ans = Math.max(ans , width);
+
+            if(arr[i]<=arr[j]){
+                i++;
+            }else{
+                j++;
             }
-    
-            return maxArea;
+            return ans;
         }
     }
-}
+    }
