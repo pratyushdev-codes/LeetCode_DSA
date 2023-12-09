@@ -26,7 +26,10 @@ public class GridIllumination {
         int [] ans = new int[queries.length];
         int [] directions ={{-1,0},{-1,1}, {0,1},{1,1},{1,0},{1,-1},{0,-1},{-1,-1},{0,0}};
         for (int i=0 ;i<queries.length;i++) {
-            int queries 
+            int x= queries[i][0];
+            int y = queries[i][1];
+
+            for(m1.getOrDefault(x,0)>0 || m2.getOrDefault(y,0)>0 || m3.getOrDefault(x-y, >0))
 
 
 
