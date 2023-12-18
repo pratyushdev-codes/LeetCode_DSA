@@ -10,33 +10,32 @@ public class NextGreaterElement {
             arr[i] = sc.nextInt();
         }
 
-        int[] result = nextgreaterElement(arr);
+        int[] result = nextgreaterElement(arr, n);
 
-        // Print the result
         for (int i = 0; i < n; i++) {
             System.out.print(result[i] + " ");
         }
+
     }
 
-    public static int[] nextgreaterElement(int[] arr) {
-        int n = arr.length;
+    public static int[] nextgreaterElement(int[] arr, int n) {
 
         Stack<Integer> st = new Stack<>();
-        int ans[] = new int[n];
 
+        int[] ans = new int[n];
         for (int i = 0; i < n; i++) {
             while (st.size() > 0 && arr[i] > arr[st.peek()]) {
                 int idx = st.pop();
                 ans[idx] = arr[i];
+
             }
             st.push(i);
         }
-
         while (st.size() > 0) {
             int idx = st.pop();
             ans[idx] = -1;
         }
-
         return ans;
     }
+
 }
