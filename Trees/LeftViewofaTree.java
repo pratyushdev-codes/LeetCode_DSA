@@ -12,6 +12,7 @@ public class LeftViewofaTree{
            if(root == null) return ans;
             q.add(root);
             while(q.size() >0){
+            
                 int n = q.size();
                 for(int i = 1; i<=n; i++){
                     Node temp = q.remove();
