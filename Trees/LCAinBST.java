@@ -14,13 +14,13 @@ public class LCAinBST{
         Node left = LCA(root.left , n1 , n2);
         Node right = LCA(root.right, n1, n2);
 
-        if(left!=null && right != null ){
-            return root;
-        }if(left !=null && right ==null )return left;
+        if(left!=null && right == null ){
+            return left;
+        }if(left ==null && right !=null )return right;
         
-        else return right;
+        return null;
     }
    
 }
-return null;
+
 }
