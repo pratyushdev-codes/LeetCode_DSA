@@ -21,19 +21,29 @@ public class PivotIndex {
             prefixsum[i] = prefixsum[i - 1] + arr[i];
         }
 
-        for (int i = 0; i < n; i++) {
-            int left;
-            if (i == 0) {
-                left = 0;
-            } else {
-                left = prefixsum[i - 1];
-            }
-            int right = prefixsum[n - 1] - prefixsum[i];
-            if (left == right) {
-                return i;
-            }
-        }
 
-        return -1; // Return -1 if no pivot index is found
+
+        int ans =0;
+for(int i =0;i<n;i++){
+    int leftSum = prefixsum[i-1];
+int rightSum = prefixsum[n-1] - prefixsum[i];
+
+}if(leftSum == rightSum){
+    ans++;
+}
+//0th index
+
+if(0==prefixsum[n-1]-prefixsum[0]){
+    ans++;
+}
+
+//last index 
+if(prefixsum[N-2]==0){
+    ans++;
+}
+
+
+return ans;
+    
     }
 }
